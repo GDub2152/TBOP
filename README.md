@@ -87,3 +87,5 @@ Added:
 ### Important propagation note
 The site distinguishes live source measurements from derived band-condition estimates.
 HF and VHF/UHF Good/Fair/Poor or enhancement labels are estimates and are not direct measurements of a path being open.
+
+
