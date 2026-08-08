@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Blowtorch Of Parma - Amateur Radio Club">
+  <title>The Blowtorch Of Parma - Amateur Radio Club</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="The Blowtorch Of Parma home">
+        <div class="brand-mark" aria-hidden="true">🔥</div>
+        <div class="brand-copy">
+          <strong>The Blowtorch Of Parma</strong>
+          <span>Amateur Radio Club</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">☰</button>
+
+      <nav id="siteNav">
+        <a href="index.html">Home</a>
+        <a href="solar.html">Propagation</a>
+        <a href="weather.html">Weather</a>
+        <a href="index.html#news">News</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#library">Library</a>
+        <a href="resources.html">Radio Tools</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="ops-strip">
+    <div class="container ops-strip-inner">
+      <span class="ops-live">● LIVE</span>
+      <span class="ops-strip-item">44135: <strong id="opsWeather">--</strong></span>
+      <span class="ops-strip-item">SFI: <strong id="opsSfi">--</strong></span>
+      <span class="ops-strip-item">Kp: <strong id="opsKp">--</strong></span>
+      <span class="ops-strip-item">20m: <strong id="ops20">--</strong></span>
+      <span class="ops-strip-item">2m: <strong id="ops2m">--</strong></span>
+      <span class="ops-strip-item status-small">Live sources + estimated band outlook</span>
+    </div>
+  </div>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Northeast Ohio Amateur Radio Community</p>
+          <h1>The Blowtorch Of Parma</h1>
+          <p class="hero-subtitle">Amateur Radio Club</p>
+          <p class="hero-text">
+            News, club activities, event information, documents, and amateur radio resources in one clean, easy-to-update site.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#news">Latest News</a>
+            <a class="button secondary" href="#events">Upcoming Events</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="signal-lines" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="hero-panel-content">
+            <p class="panel-label">Club Website</p>
+            <h2>Simple. Useful. Easy to Maintain.</h2>
+            <p>Built for quick updates without digging through complicated page code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section alt" id="operations">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">At A Glance</p><h2>Radio Operations Dashboard</h2></div>
+          <p class="section-intro">Local weather and propagation indicators, refreshed automatically.</p>
+        </div>
+        <div class="dashboard-grid">
+          <article class="dashboard-panel">
+            <h3>Current 44135 Weather</h3>
+            <div class="mini-metrics">
+              <div class="mini-metric"><span>Temperature</span><strong id="homeTemp">--°</strong></div>
+              <div class="mini-metric"><span>Humidity</span><strong id="homeHumidity">--%</strong></div>
+              <div class="mini-metric"><span>Wind</span><strong id="homeWind">-- mph</strong></div>
+              <div class="mini-metric"><span>Pressure</span><strong id="homePressure">-- inHg</strong></div>
+            </div>
+            <p style="margin:16px 0 0"><a class="text-link" href="weather.html">Full weather page →</a></p>
+          </article>
+          <article class="dashboard-panel">
+            <h3>Band Conditions At A Glance</h3>
+            <div id="homeBandSummary" class="band-summary"><span class="loading">Loading propagation estimate…</span></div>
+            <p style="margin:18px 0 0"><a class="text-link" href="solar.html">Open Propagation Center →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Latest</p>
+            <h2>Club News</h2>
+          </div>
+          <p class="section-intro">Announcements and important updates appear here.</p>
+        </div>
+        <div id="newsGrid" class="card-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="events">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Calendar</p>
+            <h2>Upcoming Events</h2>
+          </div>
+          <p class="section-intro">Meetings, club gatherings, hamfests, and other activities.</p>
+        </div>
+        <div id="eventsGrid" class="card-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2>About The Club</h2>
+            <div id="aboutText" class="prose"></div>
+          </div>
+
+          <aside class="info-card">
+            <p class="card-kicker">Quick Information</p>
+            <div id="quickInfo"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="library">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Documents</p>
+            <h2>Club Library</h2>
+          </div>
+          <p class="section-intro">PDFs, newsletters, forms, reference material, and club documents.</p>
+        </div>
+        <div id="libraryGrid" class="resource-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Links</p>
+            <h2>Amateur Radio Resources</h2>
+          </div>
+          <p class="section-intro">Useful amateur radio sites and references.</p>
+        </div>
+        <div id="resourcesGrid" class="resource-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Photos</p>
+            <h2>Club Gallery</h2>
+          </div>
+          <p class="section-intro">A simple area for event, station, and club activity photos.</p>
+        </div>
+        <div id="galleryGrid" class="gallery-grid"></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-card">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Questions or Club Updates?</h2>
+          <p id="contactText">Contact information can be added here when you're ready.</p>
+        </div>
+        <a id="contactButton" class="button primary hidden" href="#">Email The Club</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>The Blowtorch Of Parma</strong>
+        <span>Amateur Radio Club</span>
+      </div>
+      <div>© <span id="year"></span> The Blowtorch Of Parma</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/live-data.js"></script>
+  <script src="content/site-data.js"></script>
+  <script src="assets/js/app.js"></script>
+
+<script>
+async function loadHomeOps(){
+  try{
+    const [w,s]=await Promise.all([BLOWTORCH_LIVE.getWeather(),BLOWTORCH_LIVE.getSolar()]);
+    const c=w.current||{};
+    const f=v=>Number.isFinite(Number(v))?Math.round(Number(v)):"--";
+    const pressure=Number(c.surface_pressure);
+    document.getElementById("homeTemp").textContent=f(c.temperature_2m)+"°";
+    document.getElementById("homeHumidity").textContent=f(c.relative_humidity_2m)+"%";
+    document.getElementById("homeWind").textContent=f(c.wind_speed_10m)+" mph";
+    document.getElementById("homePressure").textContent=Number.isFinite(pressure)?(pressure*0.0295299830714).toFixed(2)+" inHg":"--";
+    document.getElementById("opsWeather").textContent=f(c.temperature_2m)+"°F";
+    document.getElementById("opsSfi").textContent=s.sfi!==null?Math.round(s.sfi):"--";
+    document.getElementById("opsKp").textContent=s.kp!==null?Number(s.kp).toFixed(1):"--";
+
+    const hf=BLOWTORCH_LIVE.hfBands(s,w);
+    const vhf=BLOWTORCH_LIVE.vhfBands(s,w);
+    const chosen=[...hf.filter(x=>["80m","40m","20m","10m","6m"].includes(x.band)),
+                  ...vhf.filter(x=>["2m","70cm"].includes(x.band))];
+    const box=document.getElementById("homeBandSummary");
+    box.innerHTML="";
+    chosen.forEach(b=>{
+      const status=b.current;
+      const chip=document.createElement("span");
+      chip.className="band-chip band-"+(status.cls||"neutral");
+      chip.innerHTML='<span class="band-dot"></span><strong>'+b.band+'</strong> '+status.label;
+      box.appendChild(chip);
+    });
+    const b20=hf.find(x=>x.band==="20m");
+    const b2=vhf.find(x=>x.band==="2m");
+    document.getElementById("ops20").textContent=b20?.current?.label||"--";
+    document.getElementById("ops2m").textContent=b2?.current?.label||"--";
+  }catch(e){
+    console.error(e);
+    const box=document.getElementById("homeBandSummary");
+    if(box) box.textContent="Live data temporarily unavailable.";
+  }
+}
+loadHomeOps();
+</script>
+
+</body>
+</html>
